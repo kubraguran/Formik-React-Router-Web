@@ -1,0 +1,243 @@
+
+
+@import 'colors';
+@import 'media-querie';
+
+
+
+%align-center {
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+background-color: $fresh;
+height:80px;
+display: flex;
+justify-content: space-between;
+padding: 0.5rem calc((100vw - 1200px) / 2); //keep it
+z-index: 10;
+position: relative;
+
+.logo {
+    font-weight: bolder;
+    color:$vermillion;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2.5rem;
+    margin-left: 25px;
+    @extend %align-center;
+}
+
+&_bars {
+    opacity: 0;
+    cursor: pointer;
+
+    @include tablet {
+        color: $dark;
+        opacity: 1;
+        position: absolute;
+        top:22px;
+        right:20px;
+        font-size:2rem;
+        cursor: pointer;
+        
+
+    }
+}
+
+&_menu {
+    @extend %align-center;
+    list-style: none;
+    text-align: center;
+    margin-right: 24px;
+
+    @include tablet {
+        display: none;
+
+    }
+    .menu_links {
+        color:$dark;
+        @extend %align-center; 
+        justify-content: center;
+        padding: 1rem 1rem;
+        list-style: none;
+         text-decoration: none;     
+
+    } 
+
+   
+  
+
+}
+
+}
+@media screen and (max-width: 768px){
+   
+    .navbar_dropDown {
+        width: 100%;
+        background: rgba(15, 74, 150, 0.6);
+        //background-image: url('https://cdn5.vectorstock.com/i/1000x1000/71/59/comic-space-with-stars-funny-astronauts-vector-23637159.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 15;
+        height: 40%;
+        opacity: 1;
+        transition: all 0.8s ease;
+        position: absolute;
+        justify-items: center;
+        justify-content: center;
+        display: flex;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+
+
+        .logo {
+            display: none;
+        }
+       
+
+        .navbar_menu{
+            opacity: 1; 
+            text-decoration: none;
+            z-index: 15;
+            display: flex;
+            position: absolute;    
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            margin-top: 2.5rem;  
+            
+    
+            .input {
+               position: absolute;
+               height: 2rem;
+               margin-top:-4rem;
+               border-color: $light;
+               margin-left:1.5rem;
+               border-radius: 10px;
+
+
+             
+            }
+
+            .input::placeholder{
+                font-weight: bolder;
+                position: relative;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                right: -0.5rem;
+
+            }
+        }
+       
+        ul {
+            list-style-type: none;
+            margin-top: 3rem;
+            display: flex;
+        }
+
+        li {
+            margin: 1.5rem;
+            justify-content: center;
+        }
+
+        li a {
+            text-decoration: none;
+            text-decoration-line: none;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+              font-size: 0.8rem;
+               background-color: $lime;
+               padding: 10px 24px;
+               border-radius: 4px;
+               border:none;
+               margin-top: 2rem;
+               cursor: pointer;
+
+        }
+
+    
+        li a:hover {
+            background: $orange;
+            color:$light;
+            transition: all 0.5s ease-in;
+        
+        }
+     
+       .navbar_bars{
+           color:$light;
+       }
+    }
+  
+    }
+
+
+@media screen and (min-width:768px){
+    ul {
+        list-style-type: none;
+        display: flex;
+    }
+
+    li {
+        justify-content: center;
+        margin:0.3rem;
+   
+    }
+
+    li a {
+        text-decoration: none;
+        text-decoration-line: none;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+          font-size: 1rem;
+           background-color: $light;
+           color: $lime;
+           padding: 5px 12px;
+           border-radius: 4px;
+           border:none;
+           cursor: pointer;
+           
+
+
+    }
+     li a:hover {
+         background-color: $orange;
+         transition: all 0.3s ease;
+         color: $light;
+
+     }
+  
+
+     .input{
+         display: none;
+     }
+}
+
+
+
+/* 
+@media screen and (max-width: 768px){
+.navbarnavbar_dropDown {
+    width: 100%;
+    background: yellow;
+    display:flex;
+    position: absolute;
+    z-index: 1;
+    top:80px;
+}
+}
+
+.container-btn {
+    padding: 12px 24px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background-color: $lime;
+    margin-left: 16px;
+    color:$light;
+
+    &:hover{
+        background-color:$orange;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+}
+*/
